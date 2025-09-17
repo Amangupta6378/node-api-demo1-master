@@ -24,7 +24,7 @@ const app = require("./src/app");
     // const mongoUri = await getDbUri();
     // await mongoose.connect(mongoUri);
     console.log("✅ MongoDB connected");
-
+// testing
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, "0.0.0.0", () => console.log(`🚀 Server running on port ${PORT}`));
   } catch (err) {
