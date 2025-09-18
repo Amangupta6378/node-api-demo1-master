@@ -1,7 +1,7 @@
 const app = require("./src/app");
 // const mongoose = require("mongoose");
 // const dotenv = require("dotenv");
-// const { SecretsManagerClient, GetSecretValueCommand } = require("@aws-sdk/client-secrets-manager");
+const { SecretsManagerClient, GetSecretValueCommand } = require("@aws-sdk/client-secrets-manager");
 
 // dotenv.config(); // load .env if available
 
@@ -24,10 +24,16 @@ const app = require("./src/app");
     // const mongoUri = await getDbUri();
     // await mongoose.connect(mongoUri);
     console.log("✅ MongoDB connected");
-// testing
+
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, "0.0.0.0", () => console.log(`🚀 Server running on port ${PORT}`));
   } catch (err) {
     console.error("❌ Failed to start server", err);
   }
 })();
+
+
+
+app.get("/", (req, res) => {
+  res.send(" API is running");
+});
